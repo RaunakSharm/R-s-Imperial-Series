@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <head>
+        <head>
+            <link rel="stylesheet" href="Xlight.css">
+        </head>
+        <body>
+            <div class="topnav">
+              <a class="active" href="x page2.html">Home</a>
+              <a href="About article.html">About</a>
+              <a href="Hidden.html">Hidden</a>
+              <a  href="Calculater.html">Calculater</a>
+              <a href="Office.html">TEXT Editor</a>
+              <div class="search-container">
+                <form action="/action_page.php">
+                  <input type="text" placeholder="Search.." name="search">
+                  <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+              </div>
+              <div class="container" onclick="myFunction(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+              </div>
+              <meta name="viewport" content="width=device-width, initial-scale=1">
+              
+    <style>
+    .container {
+      display: inline-block;
+      cursor: pointer;
+    }
+    
+    .bar1, .bar2, .bar3 {
+      width: 35px;
+      height: 5px;
+      background-color: #333;
+      margin: 6px 0;
+      transition: 0.4s;
+    }
+    
+    .change .bar1 {
+      transform: translate(0, 11px) rotate(-45deg);
+    }
+    
+    .change .bar2 {opacity: 0;}
+    
+    .change .bar3 {
+      transform: translate(0, -11px) rotate(45deg);
+    }
+    </style>
+    </head>
+    <body>
+    
+    <p><a href="https://www.youtube.com/@Raunak301?sub_confirmation=tr">Subscribe my channel </a></p>
+    <div class="container" onclick="myFunction(this)">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+    
+    <script>
+    function myFunction(x) {
+      x.classList.toggle("change");
+    }
+    </script>
+    
+            </div>
+<style>
+  #clock {
+    width: 200px;
+    height: 200px;
+    background-color: #f2f2f2;
+    border: 2px solid #333;
+    border-radius: 50%;
+    position: relative;
+  }
+
+  .hand {
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background-color: #333;
+    top: 50%;
+    transform-origin: 100%;
+    transform: translateY(-50%);
+    transition: transform 0.5s cubic-bezier(0.4, 2.1, 0.4, 0.9);
+  }
+
+  .hour {
+    height: 8px;
+    z-index: 3;
+  }
+
+  .minute {
+    height: 4px;
+    z-index: 2;
+  }
+
+  .second {
+    height: 2px;
+    background-color: red;
+    z-index: 1;
+  }
+</style>
+</head>
+<body>
+
+<div id="clock">
+  <div class="hand hour" id="hourHand"></div>
+  <div class="hand minute" id="minuteHand"></div>
+  <div class="hand second" id="secondHand"></div>
+</div>
+
+<script>
+function updateClock() {
+  const now = new Date();
+  const hours = now.getHours() % 12;
+  const minutes = now.getMinutes();
+  const seconds = now.getSeconds();
+
+  const hourDeg = (360 / 12) * hours + (360 / 12) * (minutes / 60);
+  const minuteDeg = (360 / 60) * minutes + (360 / 60) * (seconds / 60);
+  const secondDeg = (360 / 60) * seconds;
+
+  document.getElementById("hourHand").style.transform = `rotate(${hourDeg}deg)`;
+  document.getElementById("minuteHand").style.transform = `rotate(${minuteDeg}deg)`;
+  document.getElementById("secondHand").style.transform = `rotate(${secondDeg}deg)`;
+}
+
+// Update the clock every second
+setInterval(updateClock, 1000);
+
+// Initial call to set the clock
+updateClock();
+</script>
+
+</body>
+</html>

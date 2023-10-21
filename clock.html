@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <head>
+        <link rel="stylesheet" href="Xlight.css">
+    </head>
+    <body>
+        <div class="topnav">
+          <a class="active" href="x page2.html">Home</a>
+          <a href="About article.html">About</a>
+          <a href="Hidden.html">Hidden</a>
+          <a  href="Calculater.html">Calculater</a>
+          <a href="Office.html">TEXT Editor</a>
+          <div class="search-container">
+            <form action="/action_page.php">
+              <input type="text" placeholder="Search.." name="search">
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+          </div>
+          <div class="container" onclick="myFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </div>
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          
+<style>
+.container {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
+</style>
+</head>
+<body>
+
+<p><a href="https://www.youtube.com/@Raunak301?sub_confirmation=tr">Subscribe my channel </a></p>
+<div class="container" onclick="myFunction(this)">
+  <div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div>
+</div>
+
+<script>
+function myFunction(x) {
+  x.classList.toggle("change");
+}
+</script>
+
+        </div>
+<style>
+  #clock {
+    font-size: 48px;
+    font-family: "Arial", sans-serif;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div id="clock"></div>
+
+<script>
+function updateClock() {
+  const now = new Date();
+  const hours = now.getHours().toString().padStart(2, '0');
+  const minutes = now.getMinutes().toString().padStart(2, '0');
+  const seconds = now.getSeconds().toString().padStart(2, '0');
+  const timeString = `${hours}:${minutes}:${seconds}`;
+  document.getElementById("clock").textContent = timeString;
+}
+
+// Update the clock every second
+setInterval(updateClock, 1000);
+
+// Initial call to set the clock
+updateClock();
+</script>
+
+</body>
+<a href="clock 2.html"><h1>Click here to go to better version</h1></a>
+</html>

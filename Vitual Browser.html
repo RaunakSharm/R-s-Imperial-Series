@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Current Date and Time</title>
+    <style>
+        #calendar {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        #calendar th, #calendar td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Current Date and Time</h1>
+    <table id="calendar">
+        <tr>
+            <th colspan="7">
+                <span id="currentDate"></span>
+            </th>
+        </tr>
+        <tr>
+            <th>Sun</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+        </tr>
+        <tr id="week1"></tr>
+        <tr id="week2"></tr>
+        <tr id="week3"></tr>
+        <tr id="week4"></tr>
+        <tr id="week5"></tr>
+    </table>
+
+    <script>
+        function updateCalendar() {
+            const currentDateElement = document.getElementById('currentDate');
+            const calendarTable = document.getElementById('calendar');
+
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = now.getMonth();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            const firstDayOfMonth = new Date(year, month, 1).getDay();
+
+            currentDateElement.textContent = `${year}/${month + 1}`;
+            
+            let day = 1;
+
+            for (let week = 1; week <= 5; week++) {
+                const weekRow = document.getElementById(`week${week}`);
+
+                for (let i = 0; i < 7; i++) {
+                    if (week === 1 && i < firstDayOfMonth) {
+                        weekRow.innerHTML += '<td></td>';
+                    } else if (day <= daysInMonth) {
+                        weekRow.innerHTML += `<td>${day}</td>`;
+                        day++;
+                    } else {
+                        weekRow.innerHTML += '<td></td>';
+                    }
+                }
+            }
+        }
+
+        updateCalendar();
+        setInterval(updateCalendar, 1000);
+    </script>
+</body>
+</html>

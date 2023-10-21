@@ -1,0 +1,189 @@
+<head>
+    <link rel="stylesheet" href="Xlight.css">
+</head>
+<body>
+    <div class="topnav">
+      <a href="x page2.html">Home</a>
+      <a href="About article.html">About</a>
+      <a href="Hidden.html">Hidden</a>
+      <a class="active" href="Calculater.html">Calculater</a>
+      <a href="Office.html">TEXT Editor</a>
+      <div class="search-container">
+        <form action="/action_page.php">
+          <input type="text" placeholder="Search.." name="search">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+      <div class="container" onclick="myFunction(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      
+<style>
+.container {
+display: inline-block;
+cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+width: 35px;
+height: 5px;
+background-color: #333;
+margin: 6px 0;
+transition: 0.4s;
+}
+
+.change .bar1 {
+transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+transform: translate(0, -11px) rotate(45deg);
+}
+</style>
+</head>
+<body>
+
+<p><a href="https://www.youtube.com/@Raunak301?sub_confirmation=tr">Subscribe my channel </a></p>
+<div class="container" onclick="myFunction(this)">
+<div class="bar1"></div>
+<div class="bar2"></div>
+<div class="bar3"></div>
+</div>
+
+<script>
+function myFunction(x) {
+x.classList.toggle("change");
+}
+</script>
+<script src="https://linangdata.com/calculatorEmbed/linangcalc.js"></script>
+<div style="width:50px;height:50px;background-image:url('https://linangdata.com/calculatorEmbed/icons/48x48.png')">
+  <iframe id="linangcalc" src="https://linangdata.com/calculatorEmbed/embeddable.html?placement=right" 
+      width="50" height="50" scrolling="auto" frameBorder="0" allowTransparency="true"
+      style="border:0;position:absolute;opacity:1.0;">
+  </iframe>
+</div>
+ <article> <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #f0f0f0;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+      }
+
+      .calculator {
+          background-color: #fff;
+          border-radius: 5px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          padding: 20px;
+          text-align: center;
+          width: 300px;
+      }
+
+      input[type="text"] {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 10px;
+          font-size: 24px;
+          border: none;
+          outline: none;
+          background-color: #f0f0f0;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+      }
+
+      .row {
+          display: flex;
+          justify-content: space-between;
+      }
+
+      .button {
+          width: 23%;
+          padding: 10px;
+          font-size: 24px;
+          background-color: #4CAF50;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.2s;
+      }
+
+      .button:hover {
+          background-color: #45a049;
+      }
+
+      #clear-button {
+          background-color: #f44336;
+      }
+
+      #clear-button:hover {
+          background-color: #d32f2f;
+      }
+  </style>
+<body>
+  <div class="calculator">
+      <input type="text" id="display" disabled>
+      <div class="row">
+          <button class="button" onclick="appendToDisplay('7')">7</button>
+          <button class="button" onclick="appendToDisplay('8')">8</button>
+          <button class="button" onclick="appendToDisplay('9')">9</button>
+          <button class="button" id="clear-button" onclick="clearDisplay()">C</button>
+      </div>
+      <div class="row">
+          <button class="button" onclick="appendToDisplay('4')">4</button>
+          <button class="button" onclick="appendToDisplay('5')">5</button>
+          <button class="button" onclick="appendToDisplay('6')">6</button>
+          <button class="button" onclick="appendToDisplay('+')">+</button>
+      </div>
+      <div class="row">
+          <button class="button" onclick="appendToDisplay('1')">1</button>
+          <button class="button" onclick="appendToDisplay('2')">2</button>
+          <button class="button" onclick="appendToDisplay('3')">3</button>
+          <button class="button" onclick="appendToDisplay('-')">-</button>
+      </div>
+      <div class="row">
+          <button class="button" onclick="appendToDisplay('0')">0</button>
+          <button class="button" onclick="appendToDisplay('*')">*</button>
+          <button class="button" onclick="appendToDisplay('/')">/</button>
+          <button class="button" onclick="calculate()">=</button>
+      </div>
+  </div>
+
+  <script>
+      let displayValue = '';
+      const display = document.getElementById('display');
+
+      function appendToDisplay(value) {
+          displayValue += value;
+          display.value = displayValue;
+      }
+
+      function clearDisplay() {
+          displayValue = '';
+          display.value = '';
+      }
+
+      function calculate() {
+          try {
+              const result = eval(displayValue);
+              display.value = result;
+              displayValue = result.toString(); // Update display with result
+          } catch (error) {
+              display.value = 'Error';
+              displayValue = ''; // Clear display on error
+          }
+      }
+  </script>
+  </article>
